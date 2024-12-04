@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1024px;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .title {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 60px;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            margin-bottom: 8px;
+            padding-top: 5px;
+        }
+
+        .list {
+            padding-left: 35px;
+            margin-top: 7px;
+        }
+
+        p {
+            line-height: 20px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .container {
+                max-width: 100vw;
+                padding: 0 30px;
+            }
+        }
+
+        @media only screen and (max-width: 425px) {
+            .container {
+                max-width: 100vw;
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <h1 class="title">Interview Questions</h1>
+
+            <div class="1" style="margin-top: 60px;">
+                <button class="accordion">&#9830;&nbsp; what is react why that use?</button>
+                <div class="panel">
+                    <p>
+                        &#187; A Powerful Tool for Building User Interfaces.<br />
+                        &#187; React is a versatile JavaScript library primarily used for building user interfaces
+                        (UIs).<br />
+                        &#187; It allows developers to create dynamic, interactive, and efficient web
+                        applications.<br />
+                    </p>
+
+                    <strong>&#166;&#187; Why Use React?</strong>
+                    <ul class="list">
+                        <li>Component-Based Architecture</li>
+                        <li>Virtual DOM</li>
+                        <li>Declarative Programming</li>
+                        <li>Unidirectional Data Flow</li>
+                        <li>Large and Active Community</li>
+                        <li>Cross-Platform Development</li>
+                    </ul>
+                    <p>
+                        &#187; React's combination of these features makes it a popular choice for building modern web
+                        and
+                        mobile applications.<br />
+                        &#187; It simplifies development, improves performance, and enhances the overall user
+                        experience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="2">
+                <button class="accordion">&#9830;&nbsp; what is contextApi?</button>
+                <div class="panel">
+                    <p>
+                        The React Context API is a powerful tool for sharing data across different components in a React
+                        application without the need for prop drilling.
+                    </p>
+                </div>
+            </div>
+
+            <div class="3">
+                <button class="accordion">&#9830;&nbsp; what is Lazy Loading?</button>
+                <div class="panel">
+                    <p>
+                        Lazy loading is a design pattern that delays the loading of non-essential resources until they
+                        are
+                        needed. This technique is used to improve performance, reduce initial load time, and optimize
+                        resource
+                        usage in web applications.
+                    </p>
+                </div>
+            </div>
+
+            <div class="4">
+                <button class="accordion">&#9830;&nbsp; what is Suspense?</button>
+                <div class="panel">
+                    <p>
+                        Suspense is a built-in component in React that is used to handle the loading states of
+                        components or
+                        data. It allows developers to define a fallback UI that is displayed while the application is
+                        waiting
+                        for something, such as a lazy-loaded component or
+                        asynchronous data, to be ready.
+                    </p>
+                </div>
+            </div>
+
+            <div class="5">
+                <button class="accordion">&#9830;&nbsp; what is memo?</button>
+                <div class="panel">
+                    <p>
+                        memo is a higher-order component (HOC) that optimizes the rendering of functional components by
+                        preventing unnecessary re-renders. It does this by memorizing the component's rendered output
+                        and re-rendering it only when its props change.
+                    </p>
+                </div>
+            </div>
+
+            <div class="6">
+                <button class="accordion">&#9830;&nbsp; what is JSX?</button>
+                <div class="panel">
+                    <p>
+                        It allows you to write HTML-like code directly within JavaScript, making it easier to create
+                        React components and define their structure.
+                    </p>
+                </div>
+            </div>
+
+            <!-- <div class="1">
+        <button class="accordion">&#9830;&nbsp; what is react why that use?</button>
+        <div class="panel">
+        </div>
+    </div> -->
+
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+</html>
